@@ -13,7 +13,13 @@
 </head>
 <body>
     <div class="grid">
-        <div class="grid-item">
+        @foreach ($images as $image)
+            <div class="grid-item">
+                <img src="{{ $image->url }}" alt="image">
+            </div>
+        @endforeach
+
+        {{-- <div class="grid-item">
             <img src="https://i.imgur.com/EpYbuG7.jpg" alt="image">
         </div>
         <div class="grid-item">
@@ -51,7 +57,7 @@
         </div>
         <div class="grid-item">
             <img src="https://i.imgur.com/8kLXqdP.jpg" alt="image">
-        </div>
+        </div> --}}
     </div>
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
@@ -64,10 +70,10 @@
     });
     var elem2 = document.querySelector('.grid');
     var infScroll = new InfiniteScroll( elem2, {
-        path: '/page/@{{#}}',
+        path: '?page=@{{#}}',
         append: '.grid-item',
         outlayer: msnry,
-        // history: false,
+        history: false,
     });
 
 </script>

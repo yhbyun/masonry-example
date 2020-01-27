@@ -1,5 +1,7 @@
 <?php
 
+use App\Image;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +14,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $images = Image::paginate(10);
+
+    return view('welcome', compact('images'));
 });
 
 Route::get('/page/2', function () {
