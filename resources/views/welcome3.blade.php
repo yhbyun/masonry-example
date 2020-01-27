@@ -14,43 +14,49 @@
 <body>
     <div class="grid">
         <div class="grid-item">
-            <img src="https://i.imgur.com/EpYbuG7.jpg" alt="image">
+            <img src="https://i.imgur.com/9eHhuCK.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/kXUHDn5.jpg" alt="image">
+            <img src="https://i.imgur.com/kwxMKGr.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/Qmz61wo.jpg" alt="image">
+            <img src="https://i.imgur.com/fp6SDtQ.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/aPia86B.jpg" alt="image">
+            <img src="https://i.imgur.com/INAj06W.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/iQRKg2a.jpg" alt="image">
+            <img src="https://i.imgur.com/oLQ1tBD.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/XREWwIc.jpg" alt="image">
+            <img src="https://i.imgur.com/2izuAhd.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/MV9SvaP.jpg" alt="image">
+            <img src="https://i.imgur.com/qoWEPJe.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/qjQ9XWl.jpg" alt="image">
+            <img src="https://i.imgur.com/Iqbgpv7.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/ZJ088Tk.jpg" alt="image">
+            <img src="https://i.imgur.com/PQh9aqW.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/SuZLV2U.jpg" alt="image">
+            <img src="https://i.imgur.com/uhORS25.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/71H2B0k.jpg" alt="image">
+            <img src="https://i.imgur.com/QeN4jBt.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/vxOA4hg.jpg" alt="image">
+            <img src="https://i.imgur.com/ahtrWkN.jpg" alt="image">
         </div>
         <div class="grid-item">
-            <img src="https://i.imgur.com/8kLXqdP.jpg" alt="image">
+            <img src="https://i.imgur.com/fd1Mmhy.jpg" alt="image">
+        </div>
+        <div class="grid-item">
+            <img src="https://i.imgur.com/AOgABvd.jpg" alt="image">
+        </div>
+        <div class="grid-item">
+            <img src="https://i.imgur.com/ypd73RX.jpg" alt="image">
         </div>
     </div>
 
@@ -64,9 +70,9 @@
     });
     var elem2 = document.querySelector('.grid');
     var infScroll = new InfiniteScroll( elem2, {
-        path: '/page/@{{#}}',
-        append: '.grid-item',
-        outlayer: msnry,
+        // options
+        // path: '.pagination__next',
+        // append: '.post',
         // history: false,
     });
 

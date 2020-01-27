@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/page/2', function () {
+    return view('welcome2');
+});
+
+Route::get('/page/3', function () {
+    return view('welcome3');
+});
