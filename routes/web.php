@@ -28,3 +28,7 @@ Route::get('/page/2', function () {
 Route::get('/page/3', function () {
     return view('welcome3');
 });
+
+Route::get('/horizontal', function () {
+    return view('horizontal');
+});
