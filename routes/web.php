@@ -30,7 +30,10 @@ Route::get('/page/3', function () {
 });
 
 Route::get('/horizontal', function () {
-    $images = Image::all();
+    $images = Image::paginate(10);
+
+    abort_if($images->isEmpty(), 204);
+
 
     return view('horizontal', compact('images'));
 });

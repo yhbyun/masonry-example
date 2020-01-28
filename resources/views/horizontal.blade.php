@@ -32,6 +32,56 @@
             width: 100%;
             vertical-align: bottom;
         }
+
+        .loader-ellips {
+            font-size: 20px; /* change size here */
+            position: relative;
+            width: 4em;
+            height: 1em;
+            margin: 10px auto;
+        }
+
+        .loader-ellips__dot {
+            display: block;
+            width: 1em;
+            height: 1em;
+            border-radius: 0.5em;
+            background: #555; /* change color here */
+            position: absolute;
+            animation-duration: 0.5s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+
+        .loader-ellips__dot:nth-child(1),
+        .loader-ellips__dot:nth-child(2) {
+            left: 0;
+        }
+        .loader-ellips__dot:nth-child(3) { left: 1.5em; }
+        .loader-ellips__dot:nth-child(4) { left: 3em; }
+
+        @keyframes reveal {
+            from { transform: scale(0.001); }
+            to { transform: scale(1); }
+        }
+
+        @keyframes slide {
+            to { transform: translateX(1.5em) }
+        }
+
+        .loader-ellips__dot:nth-child(1) {
+            animation-name: reveal;
+        }
+
+        .loader-ellips__dot:nth-child(2),
+        .loader-ellips__dot:nth-child(3) {
+            animation-name: slide;
+        }
+
+        .loader-ellips__dot:nth-child(4) {
+            animation-name: reveal;
+            animation-direction: reverse;
+        }
     </style>
 </head>
 <body>
@@ -113,5 +163,25 @@
         </figure> --}}
     </div>
 
+    <div class="page-load-status">
+        <div class="loader-ellips infinite-scroll-request">
+            <span class="loader-ellips__dot"></span>
+            <span class="loader-ellips__dot"></span>
+            <span class="loader-ellips__dot"></span>
+            <span class="loader-ellips__dot"></span>
+        </div>
+        <p class="infinite-scroll-last">end of content</p>
+        <p class="infinite-scroll-error">no more pages to load</p>
+    </div>
+
+    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+    <script>
+    var infScroll = new InfiniteScroll('.grid', {
+        path: '?page=@{{#}}',
+        append: 'figure',
+        history: false,
+        status: '.page-load-status',
+    });
+    </script>
 </body>
 </html>
