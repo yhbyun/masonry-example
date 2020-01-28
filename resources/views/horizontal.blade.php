@@ -41,7 +41,13 @@
             "flexBasis":     photo.width * 240 / photo.height,
             "paddingBottom": photo.height / photo.width * 100.0,
         -->
-        <figure style="flex-grow:66.667; flex-basis:160px;">
+        @foreach ($images as $image)
+            <figure style="flex-grow:{{ $image->width * 100 / $image->height }}; flex-basis:{{ $image->width * 240 / $image->height }}px">
+                <i style="padding-bottom:{{ $image->height / $image->width * 100 }}%"></i>
+                <img src="{{ $image->url }}" alt="placeholder">
+            </figure>
+        @endforeach
+        {{-- <figure style="flex-grow:66.667; flex-basis:160px;">
             <i style="padding-bottom:150%"></i>
             <img src="http://placehold.it/400x600" alt="placeholder">
         </figure>
@@ -104,7 +110,7 @@
         <figure style="flex-grow:431.25; flex-basis:1035px;">
             <i style="padding-bottom:23.188%"></i>
             <img src="http://placehold.it/1035x240" alt="placeholder">
-        </figure>
+        </figure> --}}
     </div>
 
 </body>

@@ -30,5 +30,7 @@ Route::get('/page/3', function () {
 });
 
 Route::get('/horizontal', function () {
-    return view('horizontal');
+    $images = Image::all();
+
+    return view('horizontal', compact('images'));
 });
