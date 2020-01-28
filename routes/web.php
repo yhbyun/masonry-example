@@ -16,6 +16,8 @@ use App\Image;
 Route::get('/', function () {
     $images = Image::paginate(10);
 
+    abort_if($images->isEmpty(), 204);
+
     return view('welcome', compact('images'));
 });
 
